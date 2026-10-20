@@ -1,0 +1,130 @@
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #f2f2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Contenedor de las tarjetas */
+.perfiles {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 35px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Tarjeta de perfil */
+.perfil {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Portadas diagonales */
+.perfil__portada {
+    height: 170px;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.perfil__portada--rosa {
+    background: linear-gradient(135deg, #ff6b9a, #ffb6c9);
+}
+
+.perfil__portada--morada {
+    background: linear-gradient(135deg, #7b2ff7, #b18aff);
+}
+
+/* Fotografía circular */
+.perfil__foto {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    margin-top: -75px;
+    position: relative;
+}
+
+/* Contenido de la tarjeta */
+.perfil__contenido {
+    padding: 15px 25px 30px;
+}
+
+.perfil__nombre {
+    color: #292943;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.perfil__descripcion {
+    color: #777783;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+/* Enlaces de redes sociales */
+.perfil__redes {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.perfil__enlace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f0e9ff;
+    color: #7b2ff7;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.perfil__enlace:hover {
+    background: #7b2ff7;
+    color: #ffffff;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    .perfiles {
+        gap: 25px;
+    }
+
+    .perfil {
+        max-width: 360px;
+    }
+}
